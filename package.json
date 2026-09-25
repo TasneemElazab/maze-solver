@@ -1,0 +1,23 @@
+{
+  "name": "maze-solver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Command-line maze solver: recursive backtracking (DFS) for any path, breadth-first search for the shortest path.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js maze.txt",
+    "test": "node --test"
+  },
+  "keywords": [
+    "maze",
+    "recursion",
+    "backtracking",
+    "depth-first-search",
+    "breadth-first-search",
+    "pathfinding"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
