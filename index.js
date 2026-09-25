@@ -19,21 +19,11 @@ try {
     process.exit(1);
 }
 
-// Both solvers take the same { grid, start, end } object and own their
-// own scratch arrays, so choosing between them is a one-line change and
-// this file never has to allocate a `visited` grid itself.
 let foundPath;
 if (useBfs) {
     foundPath = bfsSolveMaze(maze);
 } else {
-    // The recursive solver's stack depth grows with the length of the
-    // walk it is exploring, not with the length of the final path: it
-    // dives into dead-end branches before backing out, so the deepest
-    // point of the recursion can be far longer than the answer. Node's
-    // default stack runs out somewhere around a few thousand frames for
-    // this function, so a perfectly valid large maze throws a RangeError
-    // instead of solving. Catch that and point the user at the iterative
-    // solver, because a raw stack trace is not an answer.
+    
     try {
         foundPath = solveMaze(maze);
     } catch (err) {
